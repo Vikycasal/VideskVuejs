@@ -1,12 +1,18 @@
 <template>
-  <div id="app" class="remove-this">
+  <div id="app">
+    <NavBar />
+   
   </div>
 </template>
 
 <script>
+import NavBar from "../src/components/NavBar/NavBar.vue"
+
 export default {
   name: 'app',
-  components: {},
+  components: {
+    NavBar
+  },
   async mounted() {
     // Users
     const userResponse = await fetch('/api/users');
@@ -17,21 +23,3 @@ export default {
   }
 }
 </script>
-
-<style lang="postcss">
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-html, body, #app {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  overflow: auto;
-}
-
-.remove-this {
-  background-image: url('./assets/background.png');
-  @apply bg-contain bg-no-repeat bg-center;
-}
-</style>
