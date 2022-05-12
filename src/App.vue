@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="pagina">
     <NavBar />
-    <h3>Home / <u>Report & Insights</u></h3>
+        <h3 class="subtitulo">Home / <u>Report & Insights</u></h3>
     <br>
     <div class="tabla">
     <table class="table-auto">
@@ -28,29 +28,37 @@
         <!-- <img :src="user.profile_img" alt="imagen-user.image" /> -->
         {{ user.first_name }}
         {{ user.last_name }}
+       <div class="mail">
         {{ user.email }}
+        </div>
         </li>
      </ul>
      </td>
      <td>
       <ul>
+       <div class="espacio">
         <li v-for="user in users" :key="user.id">
-        {{ moment("user.sessions").fromNow() }}
+        {{ moment("2021-12-20").fromNow() }}
         </li>
+        </div>
      </ul>
      </td>
           <td>
       <ul>
+               <div class="espacio">
         <li v-for="user in users" :key="user.id">
        {{ user.department }}
         </li>
+        </div>
      </ul>
      </td>
           <td>
       <ul>
+            <div class="espacio">
         <li v-for="user in users" :key="user.id">
       {{ user.status }}
         </li>
+        </div>
      </ul>
      </td>
    </tr>
@@ -67,9 +75,7 @@
 
 <script>
 import NavBar from "../src/components/NavBar/NavBar.vue"
-
 var moment = require("moment");
-
 export default {
   name: 'app',
   components: {
@@ -83,12 +89,10 @@ export default {
     // Users
     const userResponse = await fetch('/api/users');
     const users = await userResponse.json();
-
     this.users = users.users;
     // Reports
     const reportResponse = await fetch('/api/reports');
     const reports = await reportResponse.json();
-
     return {users}
   }
 }
@@ -104,6 +108,14 @@ export default {
   font-size: 20px;
 }
 
+.subtitulo {
+  color: grey;
+}
+
+.titulo {
+  margin-left: 20px;
+  font-size: 20px;
+}
 .tabla {
   background-color: rgba(255, 255, 255, 0.808);
   border-radius: 10px;
@@ -111,13 +123,21 @@ export default {
   margin-left: 400px;
   border: 2px solid rgba(236, 235, 235, 0.507);
 }
-
 .tabla1 {
   border: 2px solid rgba(236, 235, 235, 0.507);
   border-radius: 10px;
   width: 950px;
   margin-left: 20px;
+  border-collapse: separate;
+  border-spacing: 90px 10px;
 }
 
+.mail {
+  color: gray;
+}
+
+.espacio {
+  line-height: 50px;
+}
 
 </style>
