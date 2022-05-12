@@ -2,7 +2,6 @@
   <div id="app" class="pagina">
     <NavBar />
         <h3 class="subtitulo">Home / <u>Report & Insights</u></h3>
-       <i class="fas fas robot"></i>
     <br>
     <div class="tabla">
     <table class="table-auto">
@@ -20,6 +19,7 @@
       <th class="lg">LastLogin</th>
       <th>Department</th>
       <th>Status</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>

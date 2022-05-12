@@ -38,10 +38,16 @@
         <img class="h-full w-full object-cover" src="https://images.generated.photos/nn5Gi6lW4p3LmXvDT0SYrGPPFZK9b_p70bKPpYBkWro/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/NTk3NTA3LmpwZw.jpg" alt="avatar" />
       </button>
       <div v-if="isOpen" class="absolute right-0 mt-2 w-48 bg-white rounded-lg py-2 border-2 border-stone-700"> 
-        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-indigo-500 hover:text-white border-b-stone-700">My Profile
+        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-indigo-500 hover:text-white border-b-stone-700">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+  <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd" />
+</svg>My Profile
           <p class="block text-gray-500 text-sm hover:text-white">Change settings of your account.</p>
         </a>
-        <a href="#" class="block px-4 py-2 text-red-500 hover:bg-indigo-500 hover:text-white">Logout</a>
+        <a href="#" class="block px-4 py-2 text-red-500 hover:bg-indigo-500 hover:text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+  <path fill-rule="evenodd" d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z" clip-rule="evenodd" />
+</svg>Logout</a>
       </div>
     </div>
     </div>
