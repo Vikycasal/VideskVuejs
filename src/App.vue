@@ -2,6 +2,7 @@
   <div id="app" class="pagina">
     <NavBar />
         <h3 class="subtitulo">Home / <u>Report & Insights</u></h3>
+       <i class="fas fas robot"></i>
     <br>
     <div class="tabla">
     <table class="table-auto">
@@ -13,19 +14,26 @@
       <div class="tabla1">
   <thead>
     <br>
-    <tr>
+    <tr class="columnas">
       <th>Employee</th>
-      <th>Last Login</th>
+      <th></th>
+      <th class="lg">LastLogin</th>
       <th>Department</th>
       <th>Status</th>
     </tr>
   </thead>
   <tbody>
     <tr>
+      <td>
+        <ul>
+        <li v-for="user in users" :key="user.id">
+       <img src={user.profile_img} alt="imagen-user.image" />
+        </li>
+        </ul>
+      </td>
      <td>
       <ul>
         <li v-for="user in users" :key="user.id">
-        <!-- <img :src="user.profile_img" alt="imagen-user.image" /> -->
         {{ user.first_name }}
         {{ user.last_name }}
        <div class="mail">
@@ -36,9 +44,9 @@
      </td>
      <td>
       <ul>
-       <div class="espacio">
+       <div class="espaciolg">
         <li v-for="user in users" :key="user.id">
-        {{ moment("2021-12-20").fromNow() }}
+        {{ moment("user.sessions").fromNow() }}
         </li>
         </div>
      </ul>
@@ -55,7 +63,7 @@
           <td>
       <ul>
             <div class="espacio">
-        <li v-for="user in users" :key="user.id">
+        <li v-for="user in users" :key="user.id" v-bind:style="user.status==false ? 'color:red' : 'color:green' ">
       {{ user.status }}
         </li>
         </div>
@@ -112,10 +120,6 @@ export default {
   color: grey;
 }
 
-.titulo {
-  margin-left: 20px;
-  font-size: 20px;
-}
 .tabla {
   background-color: rgba(255, 255, 255, 0.808);
   border-radius: 10px;
@@ -129,7 +133,7 @@ export default {
   width: 950px;
   margin-left: 20px;
   border-collapse: separate;
-  border-spacing: 90px 10px;
+  border-spacing: 70px 10px;
 }
 
 .mail {
@@ -138,6 +142,10 @@ export default {
 
 .espacio {
   line-height: 50px;
+}
+
+.columnas {
+  color: grey;
 }
 
 </style>
