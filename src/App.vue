@@ -10,7 +10,7 @@
   <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
 </svg></span>
         </button>
-     <!-- <GraficoT /> -->
+     <GraficoT />
     <br>
     <div class="tabla">
     <table class="table-auto">
@@ -36,7 +36,7 @@
       <td>
         <ul>
         <li v-for="user in users" :key="user.id">
-       <img src="user.profile_img" alt="imagen-user.image" />
+       <img :src="user.profile_img" alt="imagen-user.image" />
         </li>
         </ul>
       </td>
