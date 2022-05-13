@@ -87,12 +87,21 @@
           <ul>
                  <div class="espacio">
                  <li v-for="user in users" :key="user.id" :style="user.status==false ? 'color:red' : 'color:green'" class="sessions">
-                 {{ user.status ? "Active" : "Inactive" }}<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mt-4 ml-3" viewBox="0 0 20 20" fill="currentColor">
-                 <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                 </svg>
+                 {{ user.status ? "Active" : "Inactive" }}
                  </li>
                  </div>
          </ul>
+         </td>
+                  <td>
+           <ul>
+                <div class="down">
+                <li v-for="user in users" :key="user.id">
+               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mt-4 ml-3" viewBox="0 0 20 20" fill="currentColor">
+                 <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                 </svg>
+                </li>
+                </div>
+           </ul>
          </td>
        </tr>
       </tbody>
@@ -194,7 +203,7 @@ export default {
   border-collapse: separate;
   border-spacing: 70px 10px;
   font-size: 13px;
-  height: 500px;
+  height: 515px;
 }
 
 .mail {
@@ -204,6 +213,12 @@ export default {
 .espacio {
   line-height: 40px;
   margin-bottom: 170px;
+}
+
+.down {
+  margin-left: -40px;
+  margin-bottom: 200px;
+   color: grey;
 }
 
 .espaciolg {
