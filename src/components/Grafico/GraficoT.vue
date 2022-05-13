@@ -1,7 +1,10 @@
 <template>
+<div class="pie">
   <Pie 
   :chartOption="chartOption"
-  :chart-data="chartData" />
+  :chart-data="chartData"
+   />
+  </div>
 </template>
 
 <script>
@@ -22,38 +25,22 @@ export default {
     Pie,
   }, 
    data: () => ({
-    users: [],
+     chartOptions: {
+      responsive: true,
+      maintainAspectRatio: false,
+    },
     chartData: {
       labels: [],
       datasets: [
         {
-          backgroundColor: [],
+          backgroundColor: ["#D26EF4", "#3C047A", "#9756E1", "#B795DD"],
           data: [],
         },
       ],
     },
-    chartOptions: {
-      responsive: true,
-      maintainAspectRatio: false,
-    },
+   
   }), 
-  methods: {
-    getLastLogin(sessions) {
-      const getLastLogin = Math.max (
-        ...sessions.map((e) => {
-          const date = new Date(e).getTime();
-          return date;
-        })
-      );
-      return moment(getLastLogin).fromNow();
-    },
-  },
 async beforeMount() {
-    // Users
-    const userResponse = await fetch('/api/users');
-    const { users } = await userResponse.json();
-
-    this.users = users;
     // Reports
     const reportResponse = await fetch('/api/reports');
     const { reports } = await reportResponse.json();
@@ -61,7 +48,7 @@ async beforeMount() {
       labels: [],
       datasets: [
         {
-          backgroundColor: [],
+          backgroundColor:  ["#D26EF4", "#3C047A", "#9756E1", "#B795DD"],
           data: [],
         },
       ],
@@ -79,3 +66,11 @@ async beforeMount() {
   }, 
 }
 </script>
+
+<style>
+.pie {
+  height: 1000px;
+  width: 1000px;
+}
+
+</style>
