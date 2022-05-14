@@ -24,6 +24,7 @@
     "npm": "^8.10.0",
     "postcss": "^7.0.35",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.3",
+    "toggle": "^1.0.1",
     "vue": "^2.6.12",
     "vue-chartjs": "^4.1.0"
   },
